@@ -1,0 +1,9 @@
+{
+    "title": "Hello world",
+    "userId": 5,
+    "location": {
+        "latitude": 55.1,
+        "longitude": 12.1
+    },
+    "body": "Lorem ipsum larum"
+}
