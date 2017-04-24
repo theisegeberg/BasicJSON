@@ -6,7 +6,9 @@
             "latitude": 55.1,
             "longitude": 12.1
         },
-        "body": "Lorem ipsum larum"
+        "body": "Lorem ipsum larum",
+        "show": false
+
     },
     {
         "title": "Hello world 23",
@@ -15,6 +17,8 @@
             "latitude": 55.1,
             "longitude": 12.1
         },
-        "body": "Lorem ipsum larum"
-    } 
+        "body": "Lorem ipsum larum",
+        "show": true
+
+    }
 ]

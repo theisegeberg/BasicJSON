@@ -31,12 +31,14 @@ struct Post:JSONObject {
     let location:Location
     let userId:Int
     let body:String
+    let show:Bool
     
     init() {
         title = ""
         location = Location()
         userId = 0
         body = ""
+        show = false
     }
     
     init(json: PureJSON) {
@@ -44,5 +46,6 @@ struct Post:JSONObject {
         location = Location(json: json["location"].jsonValue())
         userId = json["userId"].jsonValue()
         body = json["body"].jsonValue()
+        show = json["show"].jsonValue()
     }
 }

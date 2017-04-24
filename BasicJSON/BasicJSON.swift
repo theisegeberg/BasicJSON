@@ -30,7 +30,6 @@ public typealias RawJSON = [String:Any]
 public typealias PureJSONValue = [String:JSONRepresentable]
 
 
-
 public struct PureJSON {
     let value:PureJSONValue
     
@@ -55,13 +54,11 @@ public struct PureJSON {
 }
 
 
-
-
-
 protocol Convertible {
     var stringConverted:String { get }
     var doubleConverted:Double { get }
     var intConverted:Int { get }
+    var boolConverted:Bool { get }
     
 }
 
@@ -89,9 +86,6 @@ extension NSNumber:Convertible {
         return Bool(self)
     }
 }
-
-
-
 
 
 
