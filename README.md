@@ -1,6 +1,14 @@
 # BasicJSON
 
-An oversimplified Swift Data to JSON to Object framework.
+An oversimplified Swift Data to JSON to Object framework. I did this because I don't like to get hung up on other peoples frameworks and I like to roll my own. Sharing this mostly serves to demonstrate some tricks in using generics to react to assumptions (check the default implementation of the JSONDecodable porotocol in BasicJSON.swift). If you feel like using the code, go ahead, but at your own responsibility.
+
+## Installation
+
+Add repository as submodule.
+```
+git submodule add git@github.com:theisegeberg/BasicJSON.git
+```
+Drag project into your own project and add the binary, or simply use the "BasicJSON.swift" file in your project.
 
 ## Example use
 
