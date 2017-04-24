@@ -31,7 +31,7 @@ public typealias PureJSONValue = [String:JSONRepresentable]
 
 
 public struct PureJSON {
-    let value:PureJSONValue
+    public let value:PureJSONValue
     
     init() {
         value = PureJSONValue()
@@ -41,7 +41,7 @@ public struct PureJSON {
         value = JSON.purify(raw: raw)
     }
     
-    subscript(key: String) -> JSONRepresentable {
+    public subscript(key: String) -> JSONRepresentable {
         get {
             if let value = self.value[key] {
                 return value
@@ -168,25 +168,14 @@ public enum JSON {
     case object(RawJSON)
     case list([RawJSON])
     
-    func buildObject<T:JSONObject>() throws -> T {
-        switch self {
-        case .object(let rawJSON):
-            return T(json:PureJSON(raw: rawJSON))
-        default:
-            throw JSONError.wrongBaseTypeForBuilding(expectedType: ".object")
-        }
+    public static func buildObject<T:JSONObject>(rawJSON:RawJSON) -> T {
+        return T(json:PureJSON(raw: rawJSON))
     }
     
-    func buildList<T:JSONObject>() throws -> [T] {
-        switch self {
-        case .list(let list):
-            let mappedList = list.map({ (rawJSON) -> T in
-                return T(json:PureJSON(raw: rawJSON))
-            })
-            return mappedList
-        default:
-            throw JSONError.wrongBaseTypeForBuilding(expectedType: ".list")
-        }
+    public static func buildList<T:JSONObject>(rawJSON:[RawJSON]) -> [T] {
+        return rawJSON.map({ (rawElement) -> T in
+            return T(json:PureJSON(raw: rawElement))
+        })
     }
     
     static func purify(raw:RawJSON) -> PureJSONValue {
