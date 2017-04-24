@@ -39,29 +39,11 @@ class BasicJSONTests: XCTestCase {
     }
     
     
-    func testCustom() {
-        
-        /*
-        var raw = RawJSON(dictionaryLiteral: ("Hello", "world"),("bingo","bongo"))
-        print(raw)
-        
-        var pure = purify(raw: raw)
-        
-        print(pure)
-        */
-        
-        
-        
-    }
-    
     
     func testJSONCreation() {
         do {
             guard case .object(let singlePostValue) = try singlePost.JSON() else {
                 XCTFail("Single post did not contain a JSON.object")
-                
-    
-                
                 exit(0)
             }
             print(singlePostValue)
@@ -82,7 +64,7 @@ class BasicJSONTests: XCTestCase {
     
     func testObjectCreation() {
         do {
-            let post:Post = try singlePost.JSON().buildObject()!
+            let post:Post = try singlePost.JSON().buildObject()
             print(post)
         } catch let error {
             XCTFail(error.localizedDescription)
@@ -92,7 +74,7 @@ class BasicJSONTests: XCTestCase {
     
     func testObjectListCreation() {
         do {
-            let posts:[Post] = try multiplePosts.JSON().buildList()!
+            let posts:[Post] = try multiplePosts.JSON().buildList()
             print(posts)
         } catch let error {
             XCTFail(error.localizedDescription)

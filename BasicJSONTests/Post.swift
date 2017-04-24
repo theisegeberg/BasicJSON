@@ -19,9 +19,8 @@ struct Location:JSONObject {
     }
     
     init(json: PureJSON) {
-        
-        latitude = 0
-        longitude = 0
+        latitude = json["latitude"].jsonValue()
+        longitude = json["longitude"].jsonValue()
     }
     
 }
@@ -30,20 +29,20 @@ struct Post:JSONObject {
 
     let title:String
     let location:Location
+    let userId:Int
+    let body:String
     
     init() {
         title = ""
         location = Location()
+        userId = 0
+        body = ""
     }
     
     init(json: PureJSON) {
-        
-        
-        title = ""
-        location = Location(json: (json["location"]?.jsonValue())!)
-        
-        let warning = "warning"
-        print(warning,title,location)
-        
+        title = json["title"].jsonValue()
+        location = Location(json: json["location"].jsonValue())
+        userId = json["userId"].jsonValue()
+        body = json["body"].jsonValue()
     }
 }

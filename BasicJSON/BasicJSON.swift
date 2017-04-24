@@ -8,41 +8,51 @@
 
 import Foundation
 
-public enum JSONError:Error {
-    case unknown(String)
+public enum JSONError:LocalizedError {
+    case dataDecodingErrorUndecipherable
+    case dataDecodingError(stringDecoded:String)
+    case wrongBaseTypeForBuilding(expectedType:String)
+    
+    
+    public var errorDescription: String? {
+        switch self {
+        case .dataDecodingErrorUndecipherable:
+            return "Error decoding data, undecipherable"
+        case .dataDecodingError(stringDecoded: let decoded):
+            return "Error decoding data \(decoded)"
+        case .wrongBaseTypeForBuilding(expectedType: let type):
+            return "Wrong base type for building objects. Expected: \(type)"
+        }
+    }
 }
-
-
-
-
 
 public typealias RawJSON = [String:Any]
-public typealias PureJSON = [String:JSONRepresentable]
+public typealias PureJSONValue = [String:JSONRepresentable]
 
 
 
-
-
-public func purify(raw:RawJSON) -> PureJSON {
-    var retDict = [String:JSONRepresentable]()
-    raw.forEach { (key,value) in
-        if let jsonRepresentable = value as? JSONRepresentable {
-            retDict[key] = jsonRepresentable
-        } else {
-            let warning = "A warning"
-            print("WARNInG")
-            
-            print(warning,type(of: value),Mirror(reflecting: value),Mirror(reflecting: value).superclassMirror ?? "NO SUPERCLASS MIRROR")
-            
-            
-        }
-        
-        
+public struct PureJSON {
+    let value:PureJSONValue
+    
+    init() {
+        value = PureJSONValue()
     }
     
-    return retDict
+    init(raw:RawJSON) {
+        value = JSON.purify(raw: raw)
+    }
+    
+    subscript(key: String) -> JSONRepresentable {
+        get {
+            if let value = self.value[key] {
+                return value
+            }
+            return ""
+        }
+    }
+    
+    
 }
-
 
 
 
@@ -119,7 +129,7 @@ extension JSONRepresentable {
         
         if let jsonValue = PureJSON() as? T {
             if let rawSelf = self as? RawJSON {
-                return purify(raw: rawSelf) as! T
+                return PureJSON(raw:rawSelf) as! T
             }
             return jsonValue
         }
@@ -127,7 +137,7 @@ extension JSONRepresentable {
         if let jsonValue = [PureJSON]() as? T {
             if let rawList = self as? [RawJSON] {
                 return rawList.map({ (rawJSON) -> PureJSON in
-                    return purify(raw: rawJSON)
+                    return PureJSON(raw:rawJSON)
                 }) as! T
             }
             return jsonValue
@@ -164,28 +174,37 @@ public enum JSON {
     case object(RawJSON)
     case list([RawJSON])
     
-    func buildObject<T:JSONObject>() -> T? {
+    func buildObject<T:JSONObject>() throws -> T {
         switch self {
         case .object(let rawJSON):
-            return T(json:purify(raw: rawJSON))
+            return T(json:PureJSON(raw: rawJSON))
         default:
-            break
+            throw JSONError.wrongBaseTypeForBuilding(expectedType: ".object")
         }
-        return nil
     }
     
-    func buildList<T:JSONObject>() -> [T]? {
+    func buildList<T:JSONObject>() throws -> [T] {
         switch self {
         case .list(let list):
             let mappedList = list.map({ (rawJSON) -> T in
-                return T(json:purify(raw: rawJSON))
+                return T(json:PureJSON(raw: rawJSON))
             })
             return mappedList
         default:
-            break
+            throw JSONError.wrongBaseTypeForBuilding(expectedType: ".list")
         }
-        return nil
     }
+    
+    static func purify(raw:RawJSON) -> PureJSONValue {
+        var retDict = [String:JSONRepresentable]()
+        raw.forEach { (key,value) in
+            if let jsonRepresentable = value as? JSONRepresentable {
+                retDict[key] = jsonRepresentable
+            }
+        }
+        return retDict
+    }
+    
 }
 
 
@@ -193,10 +212,6 @@ public protocol JSONObject {
     init()
     init(json:PureJSON)
 }
-
-
-
-
 
 
 public protocol JSONDecodable {
@@ -227,9 +242,9 @@ extension Data:JSONDecodable {
         }
         
         if let string = String(data: self, encoding: .utf8) {
-            throw JSONError.unknown("Couldn't decode data to object:\n\(string))")
+            throw JSONError.dataDecodingError(stringDecoded: string)
         }
-        throw JSONError.unknown("Couldn't even decode data to a string")
+        throw JSONError.dataDecodingErrorUndecipherable
     }
     
 }
