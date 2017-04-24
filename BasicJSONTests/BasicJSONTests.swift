@@ -64,8 +64,13 @@ class BasicJSONTests: XCTestCase {
     
     func testObjectCreation() {
         do {
-            let post:Post = try singlePost.JSON().buildObject()
-            print(post)
+            
+            if case .object(let rawJSON) = try singlePost.JSON() {
+                let post:Post = JSON.buildObject(rawJSON: rawJSON)
+                print(post)
+            }
+            
+            
         } catch let error {
             XCTFail(error.localizedDescription)
             exit(0)
@@ -74,8 +79,10 @@ class BasicJSONTests: XCTestCase {
     
     func testObjectListCreation() {
         do {
-            let posts:[Post] = try multiplePosts.JSON().buildList()
-            print(posts)
+            if case .list(let rawJSONList) = try multiplePosts.JSON() {
+                let posts:[Post] = JSON.buildList(rawJSON: rawJSONList)
+                print(posts)
+            }
         } catch let error {
             XCTFail(error.localizedDescription)
             exit(0)
