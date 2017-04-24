@@ -1,6 +1,6 @@
 [
     {
-        "title": "Hello world",
+        "title": "Hello world 1",
         "userId": 5,
         "location": {
             "latitude": 55.1,
@@ -9,8 +9,8 @@
         "body": "Lorem ipsum larum"
     },
     {
-        "title": "Hello world",
-        "userId": 5,
+        "title": "Hello world 23",
+        "userId": 4,
         "location": {
             "latitude": 55.1,
             "longitude": 12.1

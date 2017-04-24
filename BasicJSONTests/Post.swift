@@ -8,14 +8,42 @@
 
 import Foundation
 
+struct Location:JSONObject {
+    
+    let latitude:Double
+    let longitude:Double
+    
+    init() {
+        latitude = 0
+        longitude = 0
+    }
+    
+    init(json: PureJSON) {
+        
+        latitude = 0
+        longitude = 0
+    }
+    
+}
+
 struct Post:JSONObject {
+
     let title:String
+    let location:Location
     
     init() {
         title = ""
+        location = Location()
     }
     
-    init(json: [String : Any]) {
-        title = json["title"] as! String
+    init(json: PureJSON) {
+        
+        
+        title = ""
+        location = Location(json: (json["location"]?.jsonValue())!)
+        
+        let warning = "warning"
+        print(warning,title,location)
+        
     }
 }
