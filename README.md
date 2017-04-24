@@ -4,7 +4,37 @@ An oversimplified Swift Data to JSON to Object framework.
 
 ## Example use
 
-~~~~
+### Convert data to JSON
+```Swift
+
+let singlePost:Data = Single JSON object as data...
+let multiplePosts:Data = List of JSON objects as data...
+
+// Single objects
+do {
+    if case .object(let rawJSON) = try singlePost.JSON() {
+        let post:Post = JSON.buildObject(rawJSON: rawJSON)
+        print(post)
+    }
+} catch let error {
+    print(error.localizedDescription)
+    
+}
+
+// Lists
+do {
+    if case .list(let rawJSONList) = try multiplePosts.JSON() {
+        let posts:[Post] = JSON.buildList(rawJSON: rawJSONList)
+        print(posts)
+    }
+} catch let error {
+    print(error.localizedDescription)
+    
+}
+```
+
+### Implement JSONObject protocol
+```Swift
 import Foundation
 import BasicJSON
 
@@ -49,4 +79,4 @@ struct Post:JSONObject {
         show = json["show"].jsonValue()
     }
 }
-~~~~
+```
