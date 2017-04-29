@@ -73,6 +73,15 @@ extension NSString:Convertible {
     var stringConverted: String {
         return String(self)
     }
+    var intConverted:Int {
+        return self.integerValue
+    }
+    var doubleConverted:Double {
+        return self.doubleValue
+    }
+    var boolConverted:Bool {
+        return self.boolValue
+    }
 }
 
 extension NSNumber:Convertible {
