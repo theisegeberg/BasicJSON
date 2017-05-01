@@ -8,7 +8,7 @@ Add repository as submodule.
 ```
 git submodule add git@github.com:theisegeberg/BasicJSON.git
 ```
-Drag project into your own project and add the binary, or simply use the "BasicJSON.swift" file in your project.
+Drag project into your own project and add the binary.
 
 ## Example use
 
