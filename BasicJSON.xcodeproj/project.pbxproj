@@ -8,16 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		A96B66841EAA472C00BE3DDC /* BasicJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B66831EAA472C00BE3DDC /* BasicJSONTests.swift */; };
-		A96B668B1EAA475300BE3DDC /* BasicJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93429501EA90EC8007E8AF3 /* BasicJSON.swift */; };
+		A96B668B1EAA475300BE3DDC /* PureJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93429501EA90EC8007E8AF3 /* PureJSON.swift */; };
 		A96B669B1EACF90400BE3DDC /* BasicJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = A96B66991EACF90400BE3DDC /* BasicJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A96B669F1EACF90A00BE3DDC /* BasicJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93429501EA90EC8007E8AF3 /* BasicJSON.swift */; };
+		A96B669F1EACF90A00BE3DDC /* PureJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93429501EA90EC8007E8AF3 /* PureJSON.swift */; };
 		A96B66A21EACF9EF00BE3DDC /* multiplePosts.json in Resources */ = {isa = PBXBuildFile; fileRef = A96B668C1EAA4F4700BE3DDC /* multiplePosts.json */; };
 		A96B66A31EACF9EF00BE3DDC /* singlePost.json in Resources */ = {isa = PBXBuildFile; fileRef = A96B668D1EAA4F4700BE3DDC /* singlePost.json */; };
 		A96B66A51EACFAB000BE3DDC /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B66A41EACFAB000BE3DDC /* Post.swift */; };
+		A9E4D7EE1EB720F4008B1B06 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7ED1EB720F4008B1B06 /* JSONDecodable.swift */; };
+		A9E4D7F01EB72122008B1B06 /* Data+JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7EF1EB72122008B1B06 /* Data+JSONDecodable.swift */; };
+		A9E4D7F21EB72143008B1B06 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7F11EB72143008B1B06 /* JSON.swift */; };
+		A9E4D7F41EB72160008B1B06 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7F31EB72160008B1B06 /* JSONRepresentable.swift */; };
+		A9E4D7F61EB72188008B1B06 /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7F51EB72188008B1B06 /* Convertible.swift */; };
+		A9E4D7F81EB721A3008B1B06 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7F71EB721A3008B1B06 /* JSONError.swift */; };
+		A9E4D7FA1EB721FC008B1B06 /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7F91EB721FC008B1B06 /* JSONObject.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		A93429501EA90EC8007E8AF3 /* BasicJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicJSON.swift; sourceTree = "<group>"; };
+		A93429501EA90EC8007E8AF3 /* PureJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PureJSON.swift; sourceTree = "<group>"; };
 		A96B66811EAA472C00BE3DDC /* BasicJSONTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicJSONTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96B66831EAA472C00BE3DDC /* BasicJSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicJSONTests.swift; sourceTree = "<group>"; };
 		A96B66851EAA472C00BE3DDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -27,6 +34,13 @@
 		A96B66991EACF90400BE3DDC /* BasicJSON.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicJSON.h; sourceTree = "<group>"; };
 		A96B669A1EACF90400BE3DDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A96B66A41EACFAB000BE3DDC /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A9E4D7ED1EB720F4008B1B06 /* JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONDecodable.swift; sourceTree = "<group>"; };
+		A9E4D7EF1EB72122008B1B06 /* Data+JSONDecodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+JSONDecodable.swift"; sourceTree = "<group>"; };
+		A9E4D7F11EB72143008B1B06 /* JSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		A9E4D7F31EB72160008B1B06 /* JSONRepresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONRepresentable.swift; sourceTree = "<group>"; };
+		A9E4D7F51EB72188008B1B06 /* Convertible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Convertible.swift; sourceTree = "<group>"; };
+		A9E4D7F71EB721A3008B1B06 /* JSONError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONError.swift; sourceTree = "<group>"; };
+		A9E4D7F91EB721FC008B1B06 /* JSONObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONObject.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +94,14 @@
 		A96B66981EACF90400BE3DDC /* BasicJSON */ = {
 			isa = PBXGroup;
 			children = (
-				A93429501EA90EC8007E8AF3 /* BasicJSON.swift */,
+				A9E4D7F91EB721FC008B1B06 /* JSONObject.swift */,
+				A93429501EA90EC8007E8AF3 /* PureJSON.swift */,
+				A9E4D7F71EB721A3008B1B06 /* JSONError.swift */,
+				A9E4D7F11EB72143008B1B06 /* JSON.swift */,
+				A9E4D7F51EB72188008B1B06 /* Convertible.swift */,
+				A9E4D7ED1EB720F4008B1B06 /* JSONDecodable.swift */,
+				A9E4D7F31EB72160008B1B06 /* JSONRepresentable.swift */,
+				A9E4D7EF1EB72122008B1B06 /* Data+JSONDecodable.swift */,
 				A96B66991EACF90400BE3DDC /* BasicJSON.h */,
 				A96B669A1EACF90400BE3DDC /* Info.plist */,
 			);
@@ -122,6 +143,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A96B669C1EACF90400BE3DDC /* Build configuration list for PBXNativeTarget "BasicJSON" */;
 			buildPhases = (
+				A9E4D7EC1EB71BBF008B1B06 /* ShellScript */,
 				A96B66921EACF90400BE3DDC /* Sources */,
 				A96B66931EACF90400BE3DDC /* Frameworks */,
 				A96B66941EACF90400BE3DDC /* Headers */,
@@ -194,13 +216,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		A9E4D7EC1EB71BBF008B1B06 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A96B667D1EAA472C00BE3DDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A96B66A51EACFAB000BE3DDC /* Post.swift in Sources */,
-				A96B668B1EAA475300BE3DDC /* BasicJSON.swift in Sources */,
+				A96B668B1EAA475300BE3DDC /* PureJSON.swift in Sources */,
 				A96B66841EAA472C00BE3DDC /* BasicJSONTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -209,7 +247,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A96B669F1EACF90A00BE3DDC /* BasicJSON.swift in Sources */,
+				A96B669F1EACF90A00BE3DDC /* PureJSON.swift in Sources */,
+				A9E4D7F81EB721A3008B1B06 /* JSONError.swift in Sources */,
+				A9E4D7F01EB72122008B1B06 /* Data+JSONDecodable.swift in Sources */,
+				A9E4D7F41EB72160008B1B06 /* JSONRepresentable.swift in Sources */,
+				A9E4D7FA1EB721FC008B1B06 /* JSONObject.swift in Sources */,
+				A9E4D7EE1EB720F4008B1B06 /* JSONDecodable.swift in Sources */,
+				A9E4D7F21EB72143008B1B06 /* JSON.swift in Sources */,
+				A9E4D7F61EB72188008B1B06 /* Convertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -394,6 +439,7 @@
 				A96B66891EAA472C00BE3DDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A96B669C1EACF90400BE3DDC /* Build configuration list for PBXNativeTarget "BasicJSON" */ = {
 			isa = XCConfigurationList;
@@ -402,6 +448,7 @@
 				A96B669E1EACF90400BE3DDC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
