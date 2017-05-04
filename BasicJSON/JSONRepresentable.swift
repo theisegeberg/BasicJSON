@@ -100,7 +100,15 @@ extension JSONRepresentable {
         if let stringValue = self.asString() as? T {
             return stringValue
         }
+
         fatalError("Something couldn't get converted")
+    }
+
+    public func toObject<T:JSONObject>() -> T {
+        if let rawJSON = self as? RawJSON {
+            return JSON.buildObject(rawJSON: rawJSON)
+        }
+        return T()
     }
 }
 
@@ -115,3 +123,4 @@ extension Dictionary:JSONRepresentable {}
 extension Array:JSONRepresentable {}
 extension NSDictionary:JSONRepresentable {}
 extension NSNumber:JSONRepresentable {}
+

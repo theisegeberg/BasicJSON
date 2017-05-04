@@ -43,7 +43,7 @@ struct Post: JSONObject {
 
     init(json: PureJSON) {
         title = json["title"].jsonValue()
-        location = Location(json: json["location"].jsonValue())
+        location = json["location"].toObject()
         userId = json["userId"].jsonValue()
         body = json["body"].jsonValue()
         show = json["show"].jsonValue()
