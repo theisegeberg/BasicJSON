@@ -104,11 +104,18 @@ extension JSONRepresentable {
         fatalError("Something couldn't get converted")
     }
 
-    public func toObject<T:JSONObject>() -> T {
+    public func toObject<T: JSONObject>() -> T {
         if let rawJSON = self as? RawJSON {
             return JSON.buildObject(rawJSON: rawJSON)
         }
         return T()
+    }
+
+    public func toList<T: JSONObject>() -> [T] {
+        if let rawJSONList = self as? [RawJSON] {
+            return JSON.buildList(rawJSON: rawJSONList)
+        }
+        return [T]()
     }
 }
 
@@ -123,4 +130,3 @@ extension Dictionary:JSONRepresentable {}
 extension Array:JSONRepresentable {}
 extension NSDictionary:JSONRepresentable {}
 extension NSNumber:JSONRepresentable {}
-
