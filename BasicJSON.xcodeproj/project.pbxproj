@@ -15,6 +15,15 @@
 		A934FB6B1EBB3DB500A1CEF5 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7ED1EB720F4008B1B06 /* JSONDecodable.swift */; };
 		A934FB6C1EBB3DB500A1CEF5 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7F31EB72160008B1B06 /* JSONRepresentable.swift */; };
 		A934FB6D1EBB3DB500A1CEF5 /* Data+JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7EF1EB72122008B1B06 /* Data+JSONDecodable.swift */; };
+		A95863F71F06551D004FA670 /* BasicJSONMacOS.h in Headers */ = {isa = PBXBuildFile; fileRef = A95863F51F06551D004FA670 /* BasicJSONMacOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A95863FB1F065524004FA670 /* JSONObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7F91EB721FC008B1B06 /* JSONObject.swift */; };
+		A95863FC1F065524004FA670 /* PureJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93429501EA90EC8007E8AF3 /* PureJSON.swift */; };
+		A95863FD1F065524004FA670 /* JSONError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7F71EB721A3008B1B06 /* JSONError.swift */; };
+		A95863FE1F065524004FA670 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7F11EB72143008B1B06 /* JSON.swift */; };
+		A95863FF1F065524004FA670 /* Convertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7F51EB72188008B1B06 /* Convertible.swift */; };
+		A95864001F065524004FA670 /* JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7ED1EB720F4008B1B06 /* JSONDecodable.swift */; };
+		A95864011F065524004FA670 /* JSONRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7F31EB72160008B1B06 /* JSONRepresentable.swift */; };
+		A95864021F065524004FA670 /* Data+JSONDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E4D7EF1EB72122008B1B06 /* Data+JSONDecodable.swift */; };
 		A96B66841EAA472C00BE3DDC /* BasicJSONTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A96B66831EAA472C00BE3DDC /* BasicJSONTests.swift */; };
 		A96B669B1EACF90400BE3DDC /* BasicJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = A96B66991EACF90400BE3DDC /* BasicJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A96B669F1EACF90A00BE3DDC /* PureJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93429501EA90EC8007E8AF3 /* PureJSON.swift */; };
@@ -32,6 +41,9 @@
 
 /* Begin PBXFileReference section */
 		A93429501EA90EC8007E8AF3 /* PureJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PureJSON.swift; sourceTree = "<group>"; };
+		A95863F31F06551D004FA670 /* BasicJSONMacOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BasicJSONMacOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A95863F51F06551D004FA670 /* BasicJSONMacOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BasicJSONMacOS.h; sourceTree = "<group>"; };
+		A95863F61F06551D004FA670 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A96B66811EAA472C00BE3DDC /* BasicJSONTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BasicJSONTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96B66831EAA472C00BE3DDC /* BasicJSONTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicJSONTests.swift; sourceTree = "<group>"; };
 		A96B66851EAA472C00BE3DDC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -51,6 +63,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		A95863EF1F06551D004FA670 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A96B667E1EAA472C00BE3DDC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -73,6 +92,7 @@
 			children = (
 				A96B66981EACF90400BE3DDC /* BasicJSON */,
 				A96B66821EAA472C00BE3DDC /* BasicJSONTests */,
+				A95863F41F06551D004FA670 /* BasicJSONMacOS */,
 				A934293B1EA8F59A007E8AF3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -82,8 +102,18 @@
 			children = (
 				A96B66811EAA472C00BE3DDC /* BasicJSONTests.xctest */,
 				A96B66971EACF90400BE3DDC /* BasicJSON.framework */,
+				A95863F31F06551D004FA670 /* BasicJSONMacOS.framework */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A95863F41F06551D004FA670 /* BasicJSONMacOS */ = {
+			isa = PBXGroup;
+			children = (
+				A95863F51F06551D004FA670 /* BasicJSONMacOS.h */,
+				A95863F61F06551D004FA670 /* Info.plist */,
+			);
+			path = BasicJSONMacOS;
 			sourceTree = "<group>";
 		};
 		A96B66821EAA472C00BE3DDC /* BasicJSONTests */ = {
@@ -118,6 +148,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		A95863F01F06551D004FA670 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A95863F71F06551D004FA670 /* BasicJSONMacOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A96B66941EACF90400BE3DDC /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,6 +167,24 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		A95863F21F06551D004FA670 /* BasicJSONMacOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A95863FA1F06551D004FA670 /* Build configuration list for PBXNativeTarget "BasicJSONMacOS" */;
+			buildPhases = (
+				A95863EE1F06551D004FA670 /* Sources */,
+				A95863EF1F06551D004FA670 /* Frameworks */,
+				A95863F01F06551D004FA670 /* Headers */,
+				A95863F11F06551D004FA670 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BasicJSONMacOS;
+			productName = BasicJSONMacOS;
+			productReference = A95863F31F06551D004FA670 /* BasicJSONMacOS.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		A96B66801EAA472C00BE3DDC /* BasicJSONTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A96B668A1EAA472C00BE3DDC /* Build configuration list for PBXNativeTarget "BasicJSONTests" */;
@@ -175,6 +231,10 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Theis Egeberg";
 				TargetAttributes = {
+					A95863F21F06551D004FA670 = {
+						CreatedOnToolsVersion = 8.3.3;
+						ProvisioningStyle = Automatic;
+					};
 					A96B66801EAA472C00BE3DDC = {
 						CreatedOnToolsVersion = 8.3.1;
 						ProvisioningStyle = Automatic;
@@ -200,11 +260,19 @@
 			targets = (
 				A96B66961EACF90400BE3DDC /* BasicJSON */,
 				A96B66801EAA472C00BE3DDC /* BasicJSONTests */,
+				A95863F21F06551D004FA670 /* BasicJSONMacOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		A95863F11F06551D004FA670 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A96B667F1EAA472C00BE3DDC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -240,6 +308,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		A95863EE1F06551D004FA670 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A95863FD1F065524004FA670 /* JSONError.swift in Sources */,
+				A95863FB1F065524004FA670 /* JSONObject.swift in Sources */,
+				A95863FC1F065524004FA670 /* PureJSON.swift in Sources */,
+				A95864011F065524004FA670 /* JSONRepresentable.swift in Sources */,
+				A95864001F065524004FA670 /* JSONDecodable.swift in Sources */,
+				A95864021F065524004FA670 /* Data+JSONDecodable.swift in Sources */,
+				A95863FF1F065524004FA670 /* Convertible.swift in Sources */,
+				A95863FE1F065524004FA670 /* JSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A96B667D1EAA472C00BE3DDC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,6 +453,56 @@
 			};
 			name = Release;
 		};
+		A95863F81F06551D004FA670 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = BasicJSONMacOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.theisegeberg.BasicJSONMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A95863F91F06551D004FA670 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = BasicJSONMacOS/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_BUNDLE_IDENTIFIER = com.theisegeberg.BasicJSONMacOS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		A96B66881EAA472C00BE3DDC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -442,6 +575,15 @@
 			buildConfigurations = (
 				A934294A1EA8F59A007E8AF3 /* Debug */,
 				A934294B1EA8F59A007E8AF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A95863FA1F06551D004FA670 /* Build configuration list for PBXNativeTarget "BasicJSONMacOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A95863F81F06551D004FA670 /* Debug */,
+				A95863F91F06551D004FA670 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
