@@ -29,6 +29,9 @@ public enum JSON {
             if let jsonRepresentable = value as? JSONRepresentable {
                 retDict[key] = jsonRepresentable
             }
+            if let jsonRepresentable = value as? [JSONRepresentable] {
+                retDict[key] = jsonRepresentable
+            }
         }
         return retDict
     }
