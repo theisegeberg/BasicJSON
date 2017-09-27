@@ -39,12 +39,12 @@ extension NSString:Convertible {
 
 extension NSNumber:Convertible {
     var doubleConverted: Double {
-        return Double(self)
+        return Double(truncating: self)
     }
     var intConverted: Int {
-        return Int(self)
+        return Int(truncating: self)
     }
     var boolConverted: Bool {
-        return Bool(self)
+        return Bool(truncating: self)
     }
 }
