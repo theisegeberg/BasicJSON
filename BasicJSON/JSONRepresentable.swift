@@ -101,7 +101,7 @@ extension JSONRepresentable {
             return stringValue
         }
 
-        fatalError("Something couldn't get converted")
+        fatalError("Something couldn't get converted: \(self)")
     }
 
     public func toObject<T: JSONObject>() -> T {
