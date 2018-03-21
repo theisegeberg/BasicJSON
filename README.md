@@ -1,3 +1,5 @@
+This is deprecated. Now that JSON encoding and decoding can be done directly through the Codable related protocols in Swift.
+
 # BasicJSON
 
 An oversimplified Swift JSON Data -> Object mapping framework. Works well with the BasicNetwork library.
